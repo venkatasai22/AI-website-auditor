@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #f4f7ff 0%, #eef2ff 100%);
+  color: #0f172a;
+  min-height: 100vh;
+}
+.container { width: min(960px, 92%); margin: 0 auto; padding: 2rem 0 3rem; }
+.hero { text-align: center; margin-bottom: 1rem; }
+.eyebrow { color: #6366f1; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .74rem; margin: 0 0 .35rem; }
+h1 { margin: .25rem 0; font-size: clamp(1.8rem, 6vw, 2.65rem); line-height: 1.2; }
+.subtitle { margin: .5rem auto 0; color: #475569; max-width: 680px; }
+.card { background: #fff; border-radius: 16px; box-shadow: 0 10px 35px rgba(15, 23, 42, .08); padding: 1.35rem; }
+.form-card { max-width: 500px; margin: 0 auto; }
+label { display: block; font-weight: 600; margin: .7rem 0 .2rem; color: #1f2937; }
+input { width: 100%; padding: .6rem .7rem; border: 1px solid #cbd5e1; border-radius: 10px; font-size: .95rem; }
+input:focus { border-color: #4f46e5; outline: none; box-shadow: 0 0 0 3px rgba(79, 70, 229, .15); }
+.btn { border: none; background: #4f46e5; color: #fff; font-weight: 700; width: 100%; margin-top: 1rem; padding: .7rem 1rem; border-radius: 10px; cursor: pointer; font-size: .95rem; }
+.btn:hover { background: #4338ca; }
+.btn-secondary { display: inline-block; background: #e2e8f0; color: #1f2937; text-decoration: none; border-radius: 10px; padding: .6rem .9rem; margin-top: .7rem; }
+.status { margin: .75rem 0 0; color: #334155; font-size: .9rem; }
+.footer { text-align: center; margin-top: 1.25rem; color: #64748b; font-size: .9rem; }
+.result-card { margin-top: 1rem; }
+.section { margin-top: 1rem; }
+.section-title { margin-bottom: .4rem; color: #111827; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; }
+.stat-card { border: 1px solid #e2e8f0; border-left: 4px solid #4f46e5; background: #f9fafb; padding: .6rem .8rem; border-radius: 10px; }
+.stat-card h3 { margin: 0; color: #334155; font-size: .9rem; }
+.stat-card p { margin: .25rem 0 0; font-size: 1.15rem; font-weight: 700; }
+.ai-box { background: #111827; color: #e2e8f0; padding: 1rem; border-radius: 10px; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.error { color: #b91c1c; font-weight: 700; }
+.footer-actions { margin-top: 1rem; }
+@media (max-width: 720px) {
+  .container { padding-top: 1rem; }
+  .card { padding: 1rem; }
+}

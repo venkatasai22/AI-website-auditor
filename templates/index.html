@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Website Auditor</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <p class="eyebrow">AI Website Auditor</p>
+      <h1>Get an instant AI SEO, UX & performance audit</h1>
+      <p class="subtitle">Enter your website URL and email to generate actionable recommendations.</p>
+    </header>
+
+    <main class="card form-card">
+      <form id="audit-form">
+        <label for="website_url">Website URL</label>
+        <input id="website_url" name="website_url" type="url" placeholder="https://example.com" required />
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@company.com" required />
+
+        <button type="submit" class="btn">Run audit</button>
+        <p id="status" class="status"></p>
+      </form>
+    </main>
+
+    <footer class="footer">Built with Flask, OpenAI, and Google PageSpeed Insights.</footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Result - AI Website Auditor</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <p class="eyebrow">Audit Complete</p>
+      <h1>Your AI website audit report</h1>
+      <p class="subtitle">Review SEO, performance, and UX recommendations.</p>
+    </header>
+
+    <main class="card result-card">
+      <div id="report-wrapper"></div>
+      <div class="footer-actions">
+        <a href="/" class="btn btn-secondary">Run another audit</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const report = JSON.parse(localStorage.getItem('auditReport') || 'null');
+    const wrapper = document.getElementById('report-wrapper');
+    if (!report) {
+      wrapper.innerHTML = '<p class="error">No audit data found. Please run an audit from the homepage.</p>';
+    } else {
+      const h1Html = report.h1_headings && report.h1_headings.length ? report.h1_headings.map(h=>`<li>${h}</li>`).join('') : '<li>None found</li>';
+      wrapper.innerHTML = `
+        <section class="section">
+          <h2 class="section-title">Website</h2>
+          <p><strong>${report.website_url}</strong></p>
+          <p><strong>Title:</strong> ${report.title || 'Missing'}</p>
+          <p><strong>Meta description:</strong> ${report.meta_description || 'Missing'}</p>
+          <p><strong>H1 headings:</strong></p><ul>${h1Html}</ul>
+          <p><strong>Word count:</strong> ${report.word_count}</p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Scores</h2>
+          <div class="stats-grid">
+            <div class="stat-card"><h3>Performance</h3><p>${report.performance_score ?? 'N/A'}</p></div>
+            <div class="stat-card"><h3>SEO</h3><p>${report.seo_score ?? 'N/A'}</p></div>
+            <div class="stat-card"><h3>Accessibility</h3><p>${report.accessibility_score ?? 'N/A'}</p></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">AI recommendations</h2>
+          <pre class="ai-box">${report.ai_summary}</pre>
+        </section>
+      `;
+    }
+  </script>
+</body>
+</html>
