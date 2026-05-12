@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AI Website Auditor
 
 A full-stack web app (Flask + Vanilla JS) that analyzes a website and returns SEO, UX, and performance suggestions using Google PageSpeed Insights + OpenAI.
@@ -63,5 +62,3 @@ python app.py
 - Results are saved in SQLite and sent to frontend.
 - Frontend displays audit in a result dashboard.
 =======
-# AI-website-auditor
->>>>>>> 003a06de1ed12ed0317d387b8c22ed083b334dca
